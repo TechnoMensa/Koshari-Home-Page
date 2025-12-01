@@ -7,12 +7,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     </head>
     <body>
         <section class="header">
             <nav>
                 <a href="index.html"><img src="img/TeamLogo.png"></a>
-                <div class="nav-links">
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
                         <li><a href="">Home</a></li>
                         <li><a href="">News</a></li>
@@ -21,9 +23,24 @@
                         <li><a href="">About</a></li>
                     </ul>
                 </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
             </nav>
-            
+            <div class="text-box">
+                <h1>Techno Mensa Studio</h1>
+                <p>This is our offical website with news, links to our games,<br> infos about us and our contact!</p>
+                <a href="" class="hero-btn">Checkout our game Koshari Defense</a>
+            </div>
         </section>
+<!-----JavaScript for Toggle Menu ---->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+</script>
 
 </body>
 </html>
