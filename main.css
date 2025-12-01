@@ -18,7 +18,7 @@
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(img/BG1.png);
+    background-image: linear-gradient(rgba(4,9,30,0.5), rgba(4,9,30,0.5)),url(img/BG1.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -32,6 +32,7 @@ nav{
 }
 nav img{
     width: 100px;
+    border-radius: 50%;
 }
 .nav-links{
     flex: 1;
@@ -120,7 +121,7 @@ nav .fa{
         right: -200px;
         text-align: left;
         z-index: 2;
-        transition: 1s;
+        transition: 0.5s;
     }
     nav .fa{
         display: block;
@@ -134,3 +135,17 @@ nav .fa{
     }
 }
 
+/* ---- news ---- */
+.news{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: var(--my-blue);
+}
