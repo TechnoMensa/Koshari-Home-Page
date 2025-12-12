@@ -1,81 +1,92 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="with=device-width, initial-scale=1.0">
-        <title>Techno Mensa Studio</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home - TechnoMensa Studio</title>
+    <meta name="description"
+        content="We’re a small indie studio based in Austria, passionate about creating games — like our tower-defense title, Koshari Defense.">
+    <meta name="author" content="TechnoMensa Studio">
+    <meta property="og:image" content="./assets/img/FeatureGraphic.png">
+
+    <!-- <link rel="icon" type="image/svg+xml" href="/assets/img/logo-small.svg" sizes="any"> -->
+    <link rel="icon" type="image/png" href="./apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" sizes="180x180">
+    <!-- <link rel="mask-icon" href="/assets/img/logo-small.svg" color="#000000"> -->
+
+    <link rel="stylesheet" href="./assets/css/main.css" media="screen">
 </head>
+
 <body>
-<section class="header">
-    <nav>
-        <a href="index.html"><img src="img/TeamLogo.png"></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="">Games</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">About</a></li>
-            </ul>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="./apple-touch-icon.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Games</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Techno Mensa Studio</h1>
+            <p>This is our offical website with news, links to our games,<br> infos about us and our contact!</p>
+            <a href="https://store.steampowered.com/app/3336300/Koshari_Defense_Demo/" class="hero-btn">Checkout the
+                demo of our game <br> Koshari Defense</a>
         </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-    <div class="text-box">
-        <h1>Techno Mensa Studio</h1>
-        <p>This is our offical website with news, links to our games,<br> infos about us and our contact!</p>
-        <a href="https://store.steampowered.com/app/3336300/Koshari_Defense_Demo/" class="hero-btn">Checkout the demo of our game <br> Koshari Defense</a>
-    </div>
-</section>
+    </section>
 
-<!-- Area for News -->
-<section class="news">
-    <h1>Whats going on</h1>
-    <p>What we do as a studio and news about out games.</p>
+    <!-- Area for News -->
+    <section class="news">
+        <h1>Whats going on</h1>
+        <p>What we do as a studio and news about out games.</p>
 
-    <div class="row">
-        <div class="news-col">
-            <h3>Vienna Comic Con</h3>
-            <p>Happy news about that</p>
+        <div class="row">
+            <div class="news-col">
+                <h3>Vienna Comic Con</h3>
+                <p>Happy news about that</p>
+            </div>
+            <div class="news-col">
+                <h3>GameDevDays</h3>
+                <p>Happy news about that</p>
+            </div>
+            <div class="news-col">
+                <h3>GAMESCOM</h3>
+                <p>GAMESCOM TIME</p>
+            </div>
         </div>
-        <div class="news-col">
-            <h3>GameDevDays</h3>
-            <p>Happy news about that</p>
+        <div class="row">
+            <div class="news-col">
+                <h3>Update time</h3>
+                <p>Happy news about that</p>
+            </div>
+            <div class="news-col">
+                <h3>A1 Esport</h3>
+                <p>Happy news about that</p>
+            </div>
         </div>
-        <div class="news-col">
-            <h3>GAMESCOM</h3>
-            <p>GAMESCOM TIME</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="news-col">
-            <h3>Update time</h3>
-            <p>Happy news about that</p>
-        </div>
-        <div class="news-col">
-            <h3>A1 Esport</h3>
-            <p>Happy news about that</p>
-        </div>
-    </div>
 
-</section>
+    </section>
 
 
-<!-----JavaScript for Toggle Menu ---->
-<script>
-    var navLinks = document.getElementById("navLinks");
-    function hideMenu(){
-        navLinks.style.right = "-200px";
-    }
-    function showMenu(){
-        navLinks.style.right = "0";
-    }
-</script>
+    <!-----JavaScript for Toggle Menu ---->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+    </script>
 
 </body>
-</html>
 
+</html>
