@@ -350,8 +350,8 @@ nav .fa {
 }
 
 p {
-    color: var(--color-blue);
-    font-weight: 300;
+    color: var(--color-dark-blue);
+    font-weight: 400;
 }
 
 .row {
