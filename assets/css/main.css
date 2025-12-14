@@ -13,6 +13,9 @@
     --color-dark-blue: #1a4c61;
     --color-sand-dark: #d9b280;
     --color-sand-bright: #ffdebb;
+    --color-sand-bright-light: rgb(255, 244, 231);
+
+    --icon-kofi: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916m-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963s1.832 3.011.723 4.311m6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015" fill="rgb(255, 247, 231)"/></svg>');
 }
 
 * {
@@ -23,6 +26,15 @@
     font-weight: 500;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+    padding-bottom: 0.5em;
 }
 
 .background-image {
@@ -52,16 +64,67 @@ body {
     align-items: center;
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 21px;
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--color-dark-blue);
+    padding: 21px;
+
+    & a,
+    p,
+    span {
+        color: var(--color-sand-bright-light);
+    }
+}
+
+a.with-icon {
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5ex;
+        vertical-align: text-bottom;
+        background-image: var(--icon-kofi);
+        background-position: center;
+        background-size: cover;
+        color: var(--color-sand-bright-light)
+    }
+}
+
+a.text-link {
+    text-decoration: none;
+
+    &::after {
+        content: '';
+        height: 2px;
+        background: currentColor;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+        width: 80%;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
 nav {
     z-index: 10;
     display: flex;
     padding: 13px 6%;
-    width: 88%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
     background: linear-gradient(#000000bb, #00000000);
+    box-sizing: border-box;
 
     & img {
         width: 60px;
@@ -101,46 +164,6 @@ nav {
             }
         }
     }
-}
-
-.text-box {
-    width: 90%;
-    color: var(--color-sand-bright);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.text-box h1 {
-    font-size: 62px;
-}
-
-.text-box p {
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color: var(--color-sand-bright);
-}
-
-.hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--color-sand-bright);
-    border: 1px solid var(--color-sand-bright);
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-
-}
-
-.hero-btn:hover {
-    border: 1px solid var(--color-sand-dark);
-    background-color: var(--color-sand-dark);
-    color: var(--color-blue);
-    transition: 0.5s;
 }
 
 .game-header {
@@ -192,7 +215,7 @@ main {
         flex-direction: column;
         flex: 1 1 250px;
         min-width: 200px;
-        background-color: rgb(255, 247, 231);
+        background-color: var(--color-sand-bright-light);
         border-radius: 13px;
         padding: 13px;
         gap: 13px;
@@ -235,6 +258,10 @@ nav .fa {
 
 #itchio-icon {
     background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133m6.376 6.477a2.7 2.7 0 0 1-.468.602c-.5.49-1.19.795-1.947.795a2.8 2.8 0 0 1-1.95-.795 2.6 2.6 0 0 1-.446-.59 2.8 2.8 0 0 1-.486.59 2.8 2.8 0 0 1-1.95.795.8.8 0 0 1-.264-.052 40 40 0 0 0-.168 2.95v.005l-.006 1.167c.02 2.334-.23 7.564 1.03 8.85 1.952.454 5.545.662 9.15.663 3.605 0 7.198-.21 9.15-.664 1.26-1.284 1.01-6.514 1.03-8.848l-.006-1.167v-.004a40 40 0 0 0-.168-2.95.9.9 0 0 1-.263.052 2.8 2.8 0 0 1-1.95-.795 2.7 2.7 0 0 1-.486-.59c-.127.22-.265.412-.447.59a2.8 2.8 0 0 1-1.95.794c-.76 0-1.446-.303-1.948-.793a2.7 2.7 0 0 1-.468-.602 2.7 2.7 0 0 1-.463.602 2.8 2.8 0 0 1-1.95.794h-.16a2.8 2.8 0 0 1-1.95-.793 2.7 2.7 0 0 1-.464-.602zm-2.004 2.59v.002c.795.002 1.5 0 2.373.953A20 20 0 0 1 12 11.253c.72 0 1.438.035 2.125.107.873-.953 1.578-.95 2.372-.953.376 0 1.876 0 2.92 2.934l1.123 4.028c.832 2.995-.266 3.068-1.636 3.07-2.03-.075-3.156-1.55-3.156-3.025-1.124.184-2.436.276-3.748.277-1.312 0-2.624-.093-3.748-.277 0 1.475-1.125 2.95-3.156 3.026-1.37-.004-2.468-.077-1.636-3.072l1.122-4.027c1.045-2.934 2.545-2.934 2.92-2.934zM12 12.714c-.002.002-2.14 1.964-2.523 2.662l1.4-.056v1.22c0 .056.56.033 1.123.007.562.026 1.124.05 1.124-.008v-1.22l1.4.055C14.138 14.677 12 12.713 12 12.713z" fill="%23ffdebb"/></svg>');
+}
+
+#kofi-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916m-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963s1.832 3.011.723 4.311m6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015" fill="%23ffdebb"/></svg>');
 }
 
 #post-section .post-preview-container {
@@ -300,47 +327,6 @@ nav .fa {
     }
 }
 
-@media(max-width:700px) {
-    .text-box h1 {
-        font-size: 20px;
-    }
-
-    .nav-links ul li {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        background: var(--color-blue);
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 0.5s;
-    }
-
-    nav .fa {
-        display: block;
-        color: var(--color-sand-dark);
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-
-    .nav-links ul {
-        padding: 30px;
-    }
-
-    .game-header {
-        & .game-title {
-            padding: 0 5px;
-        }
-    }
-
-}
-
 /* ---- news ---- */
 .news {
     width: 80%;
@@ -375,4 +361,105 @@ p {
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+#post-page {
+
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    & .banner {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    & .post {
+        background-color: var(--color-sand-bright-light);
+        padding: 0 34px 55px;
+
+        & article {
+            max-width: 600px;
+            margin-left: 21px;
+        }
+
+        & h1 {
+            color: var(--color-dark-blue);
+            font-weight: 900;
+            font-size: 34pt;
+        }
+
+        & h2 {
+            color: var(--color-dark-blue);
+            font-weight: 900;
+            font-size: 26pt;
+        }
+
+        & h3 {
+            color: var(--color-dark-blue);
+            font-weight: 900;
+            font-size: 18pt;
+        }
+
+        & p,
+        li {
+            color: var(--color-blue);
+            font-weight: 400;
+        }
+
+        & ul,
+        p {
+            margin-left: 1em;
+        }
+    }
+}
+
+@media(max-width:700px) {
+    /* .nav-links ul li {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        background: var(--color-blue);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+    }
+
+    nav .fa {
+        display: block;
+        color: var(--color-sand-dark);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    } */
+
+    .game-header {
+        & .game-title {
+            padding: 0 5px;
+        }
+    }
+
+    #post-page .post {
+        padding: 0 21px 34px;
+
+        & h1 {
+            font-size: 30pt;
+        }
+
+        & h2 {
+            font-size: 24pt;
+        }
+    }
 }

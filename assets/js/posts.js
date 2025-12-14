@@ -5,7 +5,7 @@ async function loadPostPreviews() {
             "description": "Check out the new towers, enemies, levels and other improvements, we added in this major release",
             "date": "21.06.2025",
             "image": "../assets/img/FeatureGraficSmall.png",
-            "url": ""
+            "url": "../news/alpha-4-0.html"
         }
     ];
     const template = document.getElementById('post-preview-template');
