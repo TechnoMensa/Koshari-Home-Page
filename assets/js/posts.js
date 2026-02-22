@@ -6,7 +6,14 @@ async function loadPostPreviews() {
             "date": "21.06.2025",
             "image": "../assets/img/FeatureGraficSmall.png",
             "url": "../news/alpha-4-0.html"
-        }
+        },
+        {
+            "title": "Alpha 4.2: Improving the Flow",
+            "description": "Quality-of-life improvements, keybinds, soundtrack and more.",
+            "date": "22.02.2026",
+            "image": "../assets/img/Alpha4_2Banner.png",
+            "url": "../news/alpha-4-2-release.html"
+        },
     ];
     const template = document.getElementById('post-preview-template');
     const container = document.querySelector('#news-section .post-preview-container');
