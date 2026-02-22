@@ -215,7 +215,6 @@ main {
     display: flex;
     flex-wrap: wrap-reverse;
     align-items: stretch;
-    align-items: center;
     gap: 21px;
 
     & .post-preview {
