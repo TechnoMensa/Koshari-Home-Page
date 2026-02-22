@@ -13,9 +13,11 @@
     --color-dark-blue: #1a4c61;
     --color-sand-dark: #d9b280;
     --color-sand-bright: #ffdebb;
-    --color-sand-bright-light: rgb(255, 232, 221);
+    --color-sand-bright-light: rgb(255, 232, 215);
+    --color-orange: rgb(209, 96, 15);
 
     --icon-kofi: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916m-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963s1.832 3.011.723 4.311m6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015" fill="rgb(255, 247, 231)"/></svg>');
+    --icon-download: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(209, 96, 15)"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>');
 }
 
 * {
@@ -33,7 +35,7 @@ h2,
 h3,
 h4,
 p {
-    padding-bottom: 0.5em;
+    padding: 0.5em 0;
 }
 
 .background-image {
@@ -111,6 +113,12 @@ a.text-link {
 
     &:hover::after {
         width: 100%;
+    }
+}
+
+a.with-icon.download-link {
+    &::before {
+        background-image: var(--icon-download);
     }
 }
 
@@ -349,9 +357,11 @@ nav .fa {
 
 }
 
-p {
+p,
+li {
     color: var(--color-dark-blue);
     font-weight: 400;
+    line-height: 1.5em;
 }
 
 .row {
@@ -382,6 +392,7 @@ p {
 
         & img {
             object-fit: cover;
+            max-width: 100%;
         }
 
         & section {
@@ -422,6 +433,11 @@ p {
         & ul,
         p {
             margin-left: 1em;
+        }
+
+        a {
+            display: inline-block;
+            color: var(--color-orange);
         }
     }
 }
