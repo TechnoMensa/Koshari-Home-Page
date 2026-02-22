@@ -403,7 +403,7 @@ li {
 
         & article {
             max-width: 600px;
-            margin-left: 21px;
+            margin: 0 21px;
         }
 
         & h1 {
@@ -430,8 +430,7 @@ li {
             font-weight: 400;
         }
 
-        & ul,
-        p {
+        & ul {
             margin-left: 1em;
         }
 
