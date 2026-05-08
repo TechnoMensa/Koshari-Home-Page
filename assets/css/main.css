@@ -60,8 +60,6 @@ header {
     width: 100%;
     position: relative;
     padding-top: 40px;
-    background-color: var(--color-blue);
-    z-index: -2;
 }
 
 body {
@@ -436,18 +434,6 @@ li {
     .game-header {
         & .game-title {
             padding: 0;
-        }
-    }
-
-    #post-page .post {
-        padding: 0 21px 34px;
-
-        & h1 {
-            font-size: 30pt;
-        }
-
-        & h2 {
-            font-size: 24pt;
         }
     }
 }

@@ -78,3 +78,17 @@
         }
     }
 }
+
+@media(max-width:700px) {
+    #post-page .post {
+        padding: 0 13px 34px;
+
+        & h1 {
+            font-size: 30pt;
+        }
+
+        & h2 {
+            font-size: 24pt;
+        }
+    }
+}
