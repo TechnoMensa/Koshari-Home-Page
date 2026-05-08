@@ -60,6 +60,8 @@ header {
     width: 100%;
     position: relative;
     padding-top: 40px;
+    background-color: var(--color-blue);
+    z-index: -2;
 }
 
 body {
