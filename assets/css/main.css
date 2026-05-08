@@ -35,7 +35,7 @@ h2,
 h3,
 h4,
 p {
-    padding: 0.5em 0;
+    padding: 0 0 0.5em;
 }
 
 .background-image {
@@ -66,19 +66,42 @@ body {
 }
 
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 21px;
     width: 100%;
     min-height: 100px;
     background-color: var(--color-dark-blue);
-    padding: 21px;
+    padding: 21px 21px 34px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    & .footer-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 21px;
+    }
+
+    .about {
+        text-align: center;
+
+        p {
+            font-weight: 300;
+            font-size: 11pt;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 12pt;
+        }
+    }
+
 
     & a,
     p,
-    span {
+    span,
+    h2 {
         color: var(--color-sand-bright-light);
     }
 }
@@ -127,12 +150,20 @@ nav {
     display: flex;
     padding: 13px 6%;
     width: 100%;
+    height: 60px;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
-    background: linear-gradient(#000000bb, #00000000);
+    background: linear-gradient(#000000da, #00000000);
     box-sizing: border-box;
+
+    .nav-icon {
+        color: var(--color-sand-bright);
+        text-decoration: none;
+        user-select: none;
+
+    }
 
     & img {
         width: 60px;
@@ -141,7 +172,19 @@ nav {
 
     & .nav-links {
         flex: 1;
-        text-align: right;
+        text-align: left;
+
+        a {
+            color: var(--color-sand-bright);
+            text-decoration: none;
+            font-size: 12pt;
+            font-style: normal;
+            font-weight: 500;
+
+            &:before {
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23ffdebb"><path d="M642-48 209-480l433-432 103 103-329 329 329 329L642-48Z"/></svg>');
+            }
+        }
 
         & ul li {
             list-style: none;
@@ -149,13 +192,6 @@ nav {
             padding: 8px 12px;
             position: relative;
 
-            a {
-                color: var(--color-sand-bright);
-                text-decoration: none;
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 500;
-            }
 
             &::after {
                 content: '';
@@ -200,7 +236,6 @@ main {
     box-sizing: border-box;
 
     & h2 {
-        padding: 0 0 0.5em;
         font-size: 34pt;
         color: var(--color-blue);
         font-weight: 900;
@@ -235,13 +270,11 @@ main {
                 font-size: 16pt;
                 font-weight: 700;
                 color: var(--color-dark-blue);
-                padding: 0 0 .5em;
             }
 
             & p {
                 font-size: 11pt;
                 color: rgb(138, 138, 138);
-                padding: 0 0 .5em;
             }
         }
 
@@ -272,6 +305,14 @@ nav .fa {
     background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916m-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963s1.832 3.011.723 4.311m6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015" fill="%23ffdebb"/></svg>');
 }
 
+#discord-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffdebb" d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0 13 13 0 0 0-.617-1.25.08.08 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.1.1 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.08.08 0 0 0 .084-.028 14 14 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13 13 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10 10 0 0 0 .372-.292.07.07 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .078.01q.181.149.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028 19.8 19.8 0 0 0 6.002-3.03.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418"/></svg>');
+}
+
+#youtube-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ffdebb" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/></svg>');
+}
+
 #post-section .post-preview-container {
     align-items: flex-start;
     flex-wrap: wrap;
@@ -298,6 +339,22 @@ nav .fa {
     &:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+
+    & .card {
+        flex-grow: 1;
+        justify-content: center;
+
+        & span {
+            display: none;
+        }
     }
 }
 
@@ -403,7 +460,7 @@ li {
 
         & article {
             max-width: 600px;
-            margin: 0 21px;
+            margin: 13px 21px;
         }
 
         & h1 {
