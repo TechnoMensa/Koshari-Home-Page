@@ -16,7 +16,7 @@
     --color-dark-blue: #1a4c61;
     --color-sand-dark: #d9b280;
     --color-sand-bright: #ffdebb;
-    --color-sand-bright-light: hsl(30deg, 100%, 90.98%);
+    --color-sand-bright-light: hsl(30, 100%, 91%);
     --color-orange: rgb(209, 96, 15);
 
     --icon-kofi: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916m-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963s1.832 3.011.723 4.311m6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015" fill="rgb(255, 247, 231)"/></svg>');
@@ -59,6 +59,7 @@ header {
     min-height: 600px;
     width: 100%;
     position: relative;
+    padding-top: 40px;
 }
 
 body {
@@ -109,6 +110,16 @@ footer {
     }
 }
 
+.trailer {
+    aspect-ratio: 16 / 9;
+}
+
+.trailer iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 a.with-icon {
     &::before {
         content: '';
@@ -149,34 +160,38 @@ a.with-icon.download-link {
 }
 
 nav {
+    position: fixed;
+    top: 0;
     z-index: 10;
+
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
     padding: 13px 6%;
     width: 100%;
     height: 60px;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
     background-color: var(--color-blue);
-    /* background: linear-gradient(#000000da, #00000000); */
-    box-sizing: border-box;
-
-    .nav-icon {
-        color: var(--color-sand-bright);
-        text-decoration: none;
-        user-select: none;
-
-    }
-
-    & img {
-        width: 60px;
-        border-radius: 50%;
-    }
 
     & .nav-links {
         flex: 1;
-        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1600px;
+
+        & .social-links {
+            display: flex;
+            gap: 21px;
+
+            & .icon {
+                width: 24px;
+                height: 24px;
+                background-position: center;
+                background-size: cover;
+            }
+        }
 
         a {
             color: var(--color-sand-bright);
@@ -187,28 +202,6 @@ nav {
 
             &:before {
                 background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23ffdebb"><path d="M642-48 209-480l433-432 103 103-329 329 329 329L642-48Z"/></svg>');
-            }
-        }
-
-        & ul li {
-            list-style: none;
-            display: inline-block;
-            padding: 8px 12px;
-            position: relative;
-
-
-            &::after {
-                content: '';
-                width: 0%;
-                height: 2px;
-                background: var(--color-sand-bright);
-                display: block;
-                margin: auto;
-                transition: 0.5s;
-            }
-
-            &:hover::after {
-                width: 100%;
             }
         }
     }
@@ -250,6 +243,14 @@ main {
     }
 }
 
+.post-preview {
+    min-width: 200px;
+    background-color: var(--color-sand-bright-light);
+    border-radius: 13px;
+    padding: 13px;
+    gap: 13px;
+}
+
 .post-preview-container {
     display: flex;
     flex-wrap: wrap-reverse;
@@ -261,11 +262,6 @@ main {
         flex-grow: 0;
         flex-direction: column;
         flex: 1 1 250px;
-        min-width: 200px;
-        background-color: var(--color-sand-bright-light);
-        border-radius: 13px;
-        padding: 13px;
-        gap: 13px;
 
         & .preview-text {
             padding: 0 8px 8px;
@@ -435,37 +431,9 @@ li {
 }
 
 @media(max-width:700px) {
-    /* .nav-links ul li {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        background: var(--color-blue);
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 0.5s;
-    }
-
-    nav .fa {
-        display: block;
-        color: var(--color-sand-dark);
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-
-    .nav-links ul {
-        padding: 30px;
-    } */
-
     .game-header {
         & .game-title {
-            padding: 0 5px;
+            padding: 0;
         }
     }
 
