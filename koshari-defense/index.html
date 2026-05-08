@@ -80,20 +80,7 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="about">
-            <h2>About TechnoMensa</h2>
-            <p>We’re a small indie studio based in 🇦🇹Austria, passionate about creating games — like our tower-defense title, Koshari Defense.</p>
-        </div>
-        <div class="footer-links">
-            <div>
-                <a class="text-link with-icon" href="https://ko-fi.com/technomensa" target="_blank">Buy Us a Coffee</a>
-            </div>
-            <div>
-                <a class="text-link" href="mailto:support@technomensa.com" target="_blank">Contact</a>
-            </div>
-        </div>
-    </footer>
+    <footer data-include="/components/footer.html"></footer>
     <template id="post-preview-template">
         <a class="post-preview card post-link">
             <img class="thumbnail" src="" />
@@ -105,7 +92,7 @@
         </a>
     </template>
     <template id="instagram-post-template">
-        <div class="post-preview">
+        <div class="post-preview card no-hover">
             <blockquote class="instagram-media" data-instgrm-captioned
                 data-instgrm-permalink="https://www.instagram.com/p/DQt6Br1DQwK/?utm_source=ig_embed&amp;utm_campaign=loading"
                 data-instgrm-version="14"
@@ -194,6 +181,7 @@
     <script async src="https://www.instagram.com/embed.js"></script>
     <script src="../assets/js/posts.js"></script>
     <script src="../assets/js/instagram-posts.js"></script>
+    <script src="../assets/js/load-templates.js"></script>
 </body>
 
 </html>

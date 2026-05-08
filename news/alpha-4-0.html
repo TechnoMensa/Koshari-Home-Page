@@ -20,117 +20,102 @@
 </head>
 
 <body>
-    <nav>
-        <!-- <a href="../index.html"><img src="../apple-touch-icon.png"></a> -->
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-                <!-- <li><a href="./index.html">Games</a></li> -->
-                <!-- <li><a href="">Contact</a></li>
-                    <li><a href="">About</a></li> -->
-            </ul>
-        </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
+    <nav data-include="/components/post-nav.html"></nav>
     <main id="post-page">
         <img class="banner" src="../assets/img/Alpha4Banner.png" />
         <div class="post">
             <article>
                 <p>Published on 21.06.2025</p>
                 <h1>Koshari Defense Alpha 4.0 is out now!</h1>
-                <h2>Towers</h2>
-                <h3>Geb’s Hammer</h3>
-                <section>
-                    <p>What was previously the Horus Statue is now a massive battering ram that shakes the ground around
-                        it
-                        with
-                        shockwaves.</p>
-                    <img src="../assets/img/gebs-hammer.png" width="150" height="180" />
-                </section>
-                <h3>The New Horus Statue</h3>
-                <section>
-                    <p>As the image of the sky god, the statue no longer generates shockwaves. Instead, it summons
-                        sandstorms
-                        around
-                        itself that briefly slow down their targets.</p>
-                    <img src="../assets/img/horus.png" width="150" height="180" />
-                </section>
-                <h3>Ballista</h3>
-                <section>
-                    <p>A heavy, stationary weapon whose bolts pierce through all enemies in its line of fire. It can
-                        handle both swarms of weak enemies and small groups of strong ones.</p>
-                    <img src="../assets/img/ballista.png" width="150" height="180" />
-                </section>
-
-                <h2>Enemies</h2>
-
-                <h3>Snakes</h3>
-                <section>
-                    <img src="../assets/img/snake.png" width="100" height="100" />
-                    <p>Never seen a snake with legs before? Now you have. If you already think it’s too fast in this
-                        state, you won’t stand a chance once it starts slithering.</p>
-                </section>
-
-                <h3>Mummy Summoner</h3>
-                <section>
-                    <img src="../assets/img/mummy-summoner.png" width="100" height="100" />
-                    <p>An undead priest with the power to breathe evil spirits into lifeless mummies. Don’t let him
-                        roam freely for too long, or you’ll soon be facing an entire army of monsters.</p>
-                </section>
-
-                <h2>Level Selection</h2>
-                <p>The new level selection overview makes it easier to understand what you’re getting into before
-                    starting a level. It shows which towers are available, what the map looks like, and how severe
-                    the threat is in that region. You’ll also see at a glance which badges you’ve already earned.
+                <p>Welcome to the latest major update of Koshari Defense! We've not only added new towers, enemies, and levels, but also introduced a
+                    new badge system that rewards you for your achievements.
                 </p>
-
-                <h2>Badges</h2>
-                <p>Finishing a level is one thing, but doing it without taking damage, never pausing, or not selling
-                    any towers is another challenge entirely. To ensure these feats don’t go unnoticed, you now
-                    receive badges for special accomplishments.</p>
-
-                <h2>Levels</h2>
-
-                <h3>Crocodile Overpass</h3>
                 <section>
-                    <p>A level with only archer towers and mummies? That’s boring. From now on, the Ballista is also
-                        available here. Koshari even gives you some useful tips on how to use it effectively.</p>
+                    <h2>Towers</h2>
+                    <h3>Geb’s Hammer</h3>
+                    <div class="flex">
+                        <p>What was previously the Horus Statue is now a massive battering ram that shakes the ground around
+                            it
+                            with
+                            shockwaves.</p>
+                        <img src="../assets/img/gebs-hammer.png" width="150" height="180" />
+                    </div>
+                    <h3>The New Horus Statue</h3>
+                    <div class="flex">
+                        <p>As the image of the sky god, the statue no longer generates shockwaves. Instead, it summons
+                            sandstorms
+                            around
+                            itself that briefly slow down their targets.</p>
+                        <img src="../assets/img/horus.png" width="150" height="180" />
+                    </div>
+                    <h3>Ballista</h3>
+                    <div class="flex">
+                        <p>A heavy, stationary weapon whose bolts pierce through all enemies in its line of fire. It can
+                            handle both swarms of weak enemies and small groups of strong ones.</p>
+                        <img src="../assets/img/ballista.png" width="150" height="180" />
+                    </div>
                 </section>
-
-                <h3>A Storm in the Jungle</h3>
                 <section>
-                    <p>In the dense jungle, Koshari’s subjects have discovered the Horus Statue. In this challenging
-                        level, it will help you fight snakes and Mummy Summoners.</p>
+                    <h2>Enemies</h2>
+                    <h3>Snakes</h3>
+                    <div class="flex">
+                        <img src="../assets/img/snake.png" width="100" height="100" />
+                        <p>Never seen a snake with legs before? Now you have. If you already think it’s too fast in this
+                            state, you won’t stand a chance once it starts slithering.</p>
+                    </div>
+                    <h3>Mummy Summoner</h3>
+                    <div class="flex">
+                        <img src="../assets/img/mummy-summoner.png" width="100" height="100" />
+                        <p>An undead priest with the power to breathe evil spirits into lifeless mummies. Don’t let him
+                            roam freely for too long, or you’ll soon be facing an entire army of monsters.</p>
+                    </div>
                 </section>
+                <section>
+                    <h2>Level Selection</h2>
+                    <p>The new level selection overview makes it easier to understand what you’re getting into before
+                        starting a level. It shows which towers are available, what the map looks like, and how severe
+                        the threat is in that region. You’ll also see at a glance which badges you’ve already earned.
+                    </p>
+                </section>
+                <section>
+                    <h2>Badges</h2>
+                    <p>Finishing a level is one thing, but doing it without taking damage, never pausing, or not selling
+                        any towers is another challenge entirely. To ensure these feats don’t go unnoticed, you now
+                        receive badges for special accomplishments.</p>
+                </section>
+                <section>
+                    <h2>Levels</h2>
 
-                <h2>Miscellaneous</h2>
-                <ul>
-                    <li>New look: Several graphics such as temples, mummies, and houses have been reworked, and new
-                        plants have been added.</li>
-                    <li>The Obelisk’s laser now increases its damage only twice instead of three times. The width of
-                        the beam now indicates its strength.</li>
-                    <li>Water is now animated.</li>
-                    <li>New tower upgrade UI: You can now always see how much better a tower becomes with the next
-                        upgrade.
-                    </li>
-                    <li>Hover over a portal to preview the path enemies will take.</li>
-                    <li>And many other small improvements—maybe someone will notice…</li>
-                </ul>
+                    <h3>Crocodile Overpass</h3>
+                    <section>
+                        <p>A level with only archer towers and mummies? That’s boring. From now on, the Ballista is also
+                            available here. Koshari even gives you some useful tips on how to use it effectively.</p>
+                    </section>
+
+                    <h3>A Storm in the Jungle</h3>
+                    <section>
+                        <p>In the dense jungle, Koshari’s subjects have discovered the Horus Statue. In this challenging
+                            level, it will help you fight snakes and Mummy Summoners.</p>
+                    </section>
+                </section>
+                <section>
+                    <h2>Miscellaneous</h2>
+                    <ul>
+                        <li>New look: Several graphics such as temples, mummies, and houses have been reworked, and new
+                            plants have been added.</li>
+                        <li>The Obelisk’s laser now increases its damage only twice instead of three times. The width of
+                            the beam now indicates its strength.</li>
+                        <li>Water is now animated.</li>
+                        <li>New tower upgrade UI: You can now always see how much better a tower becomes with the next
+                            upgrade.
+                        </li>
+                        <li>Hover over a portal to preview the path enemies will take.</li>
+                        <li>And many other small improvements—maybe someone will notice…</li>
+                    </ul>
+                </section>
             </article>
         </div>
     </main>
-    <footer>
-        <div class="about">
-            <h2>About TechnoMensa</h2>
-            <p>We’re a small indie studio based in 🇦🇹Austria, passionate about creating games — like our tower-defense title, Koshari Defense.</p>
-        </div>
-        <div class="footer-links">
-            <div>
-                <a class="text-link with-icon" href="https://ko-fi.com/technomensa" target="_blank">Buy Us a Coffee</a>
-            </div>
-            <div>
-                <a class="text-link" href="mailto:support@technomensa.com" target="_blank">Contact</a>
-            </div>
-        </div>
-    </footer>
+    <footer data-include="/components/footer.html"></footer>
+    <script src="../assets/js/load-templates.js"></script>
 </body>

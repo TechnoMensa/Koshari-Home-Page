@@ -1,3 +1,5 @@
+@import url("post.css");
+
 @font-face {
     font-family: 'Geom';
     src: url('../fonts/Geom-VariableFont_wght.ttf') format('truetype');
@@ -10,10 +12,11 @@
 :root {
     --color-light-blue: #2e81a5;
     --color-blue: #256885;
+    --color-blue-text: #3a677a;
     --color-dark-blue: #1a4c61;
     --color-sand-dark: #d9b280;
     --color-sand-bright: #ffdebb;
-    --color-sand-bright-light: rgb(255, 232, 215);
+    --color-sand-bright-light: hsl(30deg, 100%, 90.98%);
     --color-orange: rgb(209, 96, 15);
 
     --icon-kofi: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916m-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963s1.832 3.011.723 4.311m6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015" fill="rgb(255, 247, 231)"/></svg>');
@@ -93,7 +96,7 @@ footer {
         }
 
         h2 {
-            font-size: 12pt;
+            font-size: 13pt;
         }
     }
 
@@ -155,7 +158,8 @@ nav {
     align-items: center;
     position: fixed;
     top: 0;
-    background: linear-gradient(#000000da, #00000000);
+    background-color: var(--color-blue);
+    /* background: linear-gradient(#000000da, #00000000); */
     box-sizing: border-box;
 
     .nav-icon {
@@ -336,7 +340,7 @@ nav .fa {
     transition-duration: 0.2s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
-    &:hover {
+    &:hover:not(.no-hover) {
         transform: scale(1.05);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
@@ -428,74 +432,6 @@ li {
     align-items: center;
     display: flex;
     justify-content: space-between;
-}
-
-#post-page {
-
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-
-    & .banner {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-    }
-
-    & .post {
-        background-color: var(--color-sand-bright-light);
-        padding: 0 34px 55px;
-
-        & img {
-            object-fit: cover;
-            max-width: 100%;
-        }
-
-        & section {
-            display: flex;
-            flex-direction: row;
-            gap: 13px;
-        }
-
-        & article {
-            max-width: 600px;
-            margin: 13px 21px;
-        }
-
-        & h1 {
-            color: var(--color-dark-blue);
-            font-weight: 900;
-            font-size: 34pt;
-        }
-
-        & h2 {
-            color: var(--color-dark-blue);
-            font-weight: 900;
-            font-size: 26pt;
-        }
-
-        & h3 {
-            color: var(--color-dark-blue);
-            font-weight: 900;
-            font-size: 18pt;
-        }
-
-        & p,
-        li {
-            color: var(--color-blue);
-            font-weight: 400;
-        }
-
-        & ul {
-            margin-left: 1em;
-        }
-
-        a {
-            display: inline-block;
-            color: var(--color-orange);
-        }
-    }
 }
 
 @media(max-width:700px) {
