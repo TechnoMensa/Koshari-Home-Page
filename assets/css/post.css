@@ -9,11 +9,13 @@
         width: 100%;
         height: 400px;
         object-fit: cover;
+        box-shadow: var(--regular-shadow);
     }
 
     & .post {
         background-color: var(--color-sand-bright-light);
         padding: 0 34px 55px;
+        box-shadow: var(--regular-shadow);
 
         & h1,
         h2,

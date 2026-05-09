@@ -16,8 +16,9 @@
     --color-dark-blue: #1a4c61;
     --color-sand-dark: #d9b280;
     --color-sand-bright: #ffdebb;
-    --color-sand-bright-light: hsl(30, 100%, 91%);
-    --color-orange: rgb(209, 96, 15);
+    --color-sand-bright-light: hsl(30, 100%, 92%);
+    --color-orange: hsl(25.05deg 87.44% 46.35%);
+    --regular-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
     --icon-kofi: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916m-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963s1.832 3.011.723 4.311m6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015" fill="rgb(255, 247, 231)"/></svg>');
     --icon-download: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(209, 96, 15)"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>');
@@ -38,7 +39,7 @@ h2,
 h3,
 h4,
 p {
-    padding: 0 0 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .background-image {
@@ -48,9 +49,6 @@ p {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url(../img/BG1.png);
-    background-position: center;
-    background-size: cover;
     filter: brightness(0.7);
 }
 
@@ -101,7 +99,6 @@ footer {
         }
     }
 
-
     & a,
     p,
     span,
@@ -135,9 +132,8 @@ a.with-icon {
     }
 }
 
-a.text-link {
-    text-decoration: none;
-
+a.link-underlined,
+#post-page .post a {
     &::after {
         content: '';
         height: 2px;
@@ -151,6 +147,13 @@ a.text-link {
     &:hover::after {
         width: 100%;
     }
+}
+
+a.text-link,
+#post-page .post a {
+    text-decoration: none;
+    font-size: 12pt;
+    font-weight: 500;
 }
 
 a.with-icon.download-link {
@@ -173,6 +176,7 @@ nav {
     width: 100%;
     height: 60px;
     background-color: var(--color-blue);
+    box-shadow: var(--regular-shadow);
 
     & .nav-links {
         flex: 1;
@@ -195,10 +199,6 @@ nav {
 
         a {
             color: var(--color-sand-bright);
-            text-decoration: none;
-            font-size: 12pt;
-            font-style: normal;
-            font-weight: 500;
 
             &:before {
                 background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23ffdebb"><path d="M642-48 209-480l433-432 103 103-329 329 329 329L642-48Z"/></svg>');
@@ -334,7 +334,7 @@ nav .fa {
     border-radius: 13px;
     padding: 13px;
     transition-duration: 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--regular-shadow);
 
     &:hover:not(.no-hover) {
         transform: scale(1.05);
