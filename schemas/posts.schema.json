@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "NewsPosts",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+            "title",
+            "description",
+            "date",
+            "image",
+            "url"
+        ],
+        "properties": {
+            "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 60,
+                "description": "The title of the news post"
+            },
+            "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120,
+                "description": "Short summary of the post"
+            },
+            "date": {
+                "type": "string",
+                "format": "date",
+                "description": "Publication date in YYYY-MM-DD format"
+            },
+            "image": {
+                "type": "string",
+                "pattern": "^/.*",
+                "description": "Internal path to preview image (must start with '/')"
+            },
+            "url": {
+                "type": "string",
+                "pattern": "^/.*",
+                "description": "Internal link to full post page (must start with '/')"
+            }
+        }
+    }
+}

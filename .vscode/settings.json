@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/assets/data/posts.json",
+            ],
+            "url": "/schemas/posts.schema.json"
+        }
+    ]
+}
