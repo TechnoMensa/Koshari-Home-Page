@@ -42,6 +42,10 @@ p {
     margin-bottom: 0.5em;
 }
 
+a {
+    text-decoration: none;
+}
+
 .background-image {
     position: absolute;
     top: 0;
@@ -53,11 +57,7 @@ p {
 }
 
 header {
-    height: 80vh;
-    min-height: 600px;
-    width: 100%;
-    position: relative;
-    padding-top: 40px;
+    min-height: 60px;
 }
 
 body {
@@ -151,7 +151,6 @@ a.link-underlined,
 
 a.text-link,
 #post-page .post a {
-    text-decoration: none;
     font-size: 12pt;
     font-weight: 500;
 }
@@ -178,25 +177,23 @@ nav {
     background-color: var(--color-blue);
     box-shadow: var(--regular-shadow);
 
+    h1 {
+        font-size: 16pt;
+        margin: 0;
+        color: var(--color-sand-bright);
+    }
+
+    & .breadcrumb {
+        display: flex;
+        align-items: center;
+    }
+
     & .nav-links {
         flex: 1;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         max-width: 1600px;
-
-        & .social-links {
-            display: flex;
-            gap: 21px;
-
-            & .icon {
-                width: 24px;
-                height: 24px;
-                mask-position: center;
-                mask-size: cover;
-                background-color: var(--color-sand-bright);
-            }
-        }
 
         a {
             color: var(--color-sand-bright);
@@ -208,7 +205,34 @@ nav {
     }
 }
 
+& .social-links {
+    display: flex;
+    gap: 21px;
+
+    & .icon {
+        width: 24px;
+        height: 24px;
+        mask-position: center;
+        mask-size: cover;
+        background-color: var(--color-sand-bright);
+    }
+
+    & .icon-only {
+        transition-duration: 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
 .game-header {
+    height: 80vh;
+    min-height: 600px;
+    width: 100%;
+    position: relative;
+    padding-top: 40px;
+
     display: flex;
     flex-direction: column;
     gap: 34px;
@@ -250,6 +274,28 @@ main {
     border-radius: 13px;
     padding: 13px;
     gap: 13px;
+
+    & h3 {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--color-dark-blue);
+    }
+
+    & h4 {
+        font-size: 12pt;
+        font-weight: 700;
+        color: var(--color-dark-blue);
+    }
+
+    & p {
+        color: var(--color-blue-text);
+    }
+
+    a {
+        display: inline-block;
+        color: var(--color-orange);
+    }
+
 }
 
 .post-preview-container {
@@ -266,12 +312,6 @@ main {
 
         & .preview-text {
             padding: 0 8px 8px;
-
-            & h3 {
-                font-size: 16pt;
-                font-weight: 700;
-                color: var(--color-dark-blue);
-            }
 
             & p {
                 font-size: 11pt;
@@ -331,7 +371,6 @@ nav .fa {
 }
 
 .card {
-    text-decoration: none;
     border-radius: 13px;
     padding: 13px;
     transition-duration: 0.2s;
@@ -346,7 +385,6 @@ nav .fa {
 .card-row {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     gap: 8px;
 
     & .card {
@@ -391,6 +429,10 @@ nav .fa {
         }
 
     }
+
+    .card-row {
+        justify-content: center;
+    }
 }
 
 /* ---- news ---- */
@@ -431,10 +473,89 @@ li {
     justify-content: space-between;
 }
 
+.factsheet>div {
+    margin-bottom: 0.5em;
+
+    >* {
+        margin-bottom: 0;
+    }
+}
+
+.column-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 21px;
+
+    & .column {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+
+        &>* {
+            flex-grow: 1;
+        }
+    }
+
+    & .column:first-child {
+        flex: 1 1 240px;
+    }
+
+    & .column:last-child {
+        flex: 3 1 360px;
+    }
+
+    & .social-links .icon {
+        background-color: var(--color-orange);
+    }
+}
+
+.card.capsule {
+    position: relative;
+    flex: 0 0 300px;
+    flex-grow: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    & img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    & .capsule-title {
+        background: linear-gradient(#00000000, #000000b8);
+        position: absolute;
+        box-sizing: border-box;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: 30px;
+        padding: 13px;
+
+        & h3 {
+            color: var(--color-sand-bright-light);
+            margin: 0;
+            font-size: 20pt;
+            font-weight: 600;
+        }
+    }
+}
+
 @media(max-width:700px) {
     .game-header {
         & .game-title {
             padding: 0;
         }
+    }
+}
+
+@media(max-width:400px) {
+    nav h1 {
+        display: none;
     }
 }
